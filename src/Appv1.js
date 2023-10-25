@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Assignment1 from "./components/Assignment1";
 import AccordianComponent from "./components/AccordianComponent";
-import Button from "./components/Button";
 
 const messages = [
   "Learn React ⚛️",
@@ -51,18 +50,26 @@ function App() {
             Step {step} :{messages[step - 1]}
           </p>
           <div className="buttons">
-            <Button bgColor="#7950f2" color="#fff" onClick={handlePrevious}>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handlePrevious}
+              // disabled={step > 1 ? true : false}
+            >
               Previous
-            </Button>
-            <Button bgColor="#7950f2" color="#fff" onClick={handleNext}>
+            </button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handleNext}
+              // disabled={step === 3 ? true : false}
+            >
               Next
-            </Button>
+            </button>
           </div>
         </div>
       )}
 
       {/* <Assignment1 /> */}
-      <AccordianComponent data={faqs} />
+      {/* <AccordianComponent data={faqs} /> */}
     </>
   );
 }
